@@ -1,97 +1,184 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# KTXGo
 
-# Getting Started
+Ứng dụng mua sắm dành cho sinh viên được xây dựng bằng React Native.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Thông tin sinh viên
 
-## Step 1: Start Metro
+- Họ và tên: PHẠM THANH HƯNG
+- MSSV: 23688581
+- Tên project: KTXGo_23688581
+- Nền tảng: React Native / Android
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Giới thiệu
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+KTXGo là ứng dụng mua sắm trên thiết bị di động dành cho sinh viên.
 
-```sh
-# Using npm
-npm start
+Ứng dụng cho phép người dùng xem danh sách sản phẩm, tìm kiếm và lọc sản phẩm, xem thông tin chi tiết, thêm sản phẩm vào giỏ hàng và quản lý số lượng sản phẩm.
 
-# OR using Yarn
-yarn start
+## Chức năng
+
+### Cửa hàng
+
+- Hiển thị danh sách sản phẩm từ API.
+- Hiển thị hình ảnh, tên, giá, danh mục và đánh giá sản phẩm.
+- Pull-to-refresh để tải lại dữ liệu.
+- Tìm kiếm sản phẩm theo tên.
+- Lọc sản phẩm theo danh mục.
+- Xem chi tiết sản phẩm.
+
+### Chi tiết sản phẩm
+
+- Hiển thị hình ảnh sản phẩm.
+- Hiển thị tên sản phẩm.
+- Hiển thị danh mục.
+- Hiển thị giá.
+- Hiển thị đánh giá.
+- Hiển thị mô tả sản phẩm.
+- Thêm sản phẩm vào giỏ hàng.
+
+### Giỏ hàng
+
+- Thêm sản phẩm vào giỏ hàng.
+- Tăng số lượng sản phẩm.
+- Giảm số lượng sản phẩm.
+- Xóa một sản phẩm.
+- Xóa toàn bộ giỏ hàng.
+- Tính tổng số lượng sản phẩm.
+- Tính tổng giá trị giỏ hàng.
+
+### Tìm kiếm và lọc
+
+- Tìm kiếm sản phẩm theo từ khóa.
+- Lọc theo danh mục.
+- Kết hợp tìm kiếm và lọc.
+- Hiển thị số lượng kết quả.
+- Xóa bộ lọc.
+
+### Yêu thích
+
+Chức năng đang được phát triển:
+
+- Thêm sản phẩm vào danh sách yêu thích.
+- Xóa sản phẩm khỏi danh sách yêu thích.
+- Lưu danh sách yêu thích trên thiết bị.
+
+### Vị trí
+
+Chức năng sẽ được bổ sung để hỗ trợ thông tin vị trí của người dùng.
+
+## Công nghệ sử dụng
+
+- React Native
+- TypeScript
+- React Navigation
+- TanStack React Query
+- Zustand
+- AsyncStorage
+- REST API
+- Android
+
+## Cấu trúc project
+
+```text
+KTXGo_23688581/
+│
+├── android/
+├── ios/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ProductCard.tsx
+│   │   ├── LoadingView.tsx
+│   │   └── ErrorView.tsx
+│   │
+│   ├── screens/
+│   │   ├── ShopScreen.tsx
+│   │   ├── ProductDetailScreen.tsx
+│   │   ├── CartScreen.tsx
+│   │   └── MeScreen.tsx
+│   │
+│   ├── navigation/
+│   │   ├── RootNavigator.tsx
+│   │   ├── MainTabs.tsx
+│   │   └── ShopStack.tsx
+│   │
+│   ├── stores/
+│   │   └── useAppStore.ts
+│   │
+│   ├── services/
+│   │   ├── api.ts
+│   │   └── locationService.ts
+│   │
+│   ├── hooks/
+│   │   └── useProducts.ts
+│   │
+│   ├── data/
+│   ├── types/
+│   ├── constants/
+│   └── utils/
+│
+├── App.tsx
+├── package.json
+└── README.md
 ```
 
-## Step 2: Build and run your app
+## Cài đặt
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Cài đặt dependencies:
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+npm install
 ```
 
-### iOS
+Khởi động Metro:
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+npx react-native start
 ```
 
-Then, and every time you update your native dependencies, run:
+Ở terminal khác, chạy ứng dụng Android:
 
-```sh
-bundle exec pod install
+```bash
+npx react-native run-android
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## Yêu cầu môi trường
 
-```sh
-# Using npm
-npm run ios
+- Node.js
+- npm
+- JDK 17
+- Android SDK
+- Android Emulator hoặc thiết bị Android
+- React Native CLI
 
-# OR using Yarn
-yarn ios
-```
+## Trạng thái project
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Đã hoàn thành:
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- Khởi tạo project React Native.
+- Navigation.
+- Bottom Tab Navigation.
+- Kết nối API sản phẩm.
+- Danh sách sản phẩm.
+- Chi tiết sản phẩm.
+- Tìm kiếm.
+- Lọc theo danh mục.
+- Giỏ hàng.
+- Tăng/giảm số lượng.
+- Xóa sản phẩm.
+- Tính tổng tiền.
 
-## Step 3: Modify your app
+Đang tiếp tục:
 
-Now that you have successfully run the app, let's make changes!
+- Favorites.
+- Lưu dữ liệu bằng AsyncStorage.
+- Location.
+- Checkout.
+- Hoàn thiện giao diện.
+- Kiểm thử ứng dụng.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Tác giả
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+**PHẠM THANH HƯNG**
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+MSSV: **23688581**
