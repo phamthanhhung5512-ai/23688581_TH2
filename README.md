@@ -4,4 +4,5 @@ stamp #49AF3E
 số cuối 1 
 VARIANT: watermark Dưới | Login phone | Tab Shop→Giỏ→Tôi | haptic selection | phí B | Detail card
 # ẢNH
-/docs/Screenshot%202026-10-01%20160706.png
+docs/Screenshot%202026-10-01%20160706.png
+docs/Screenshot%202026-10-01%20160825.png
